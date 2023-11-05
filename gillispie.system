@@ -1,0 +1,24 @@
+;;;; -*- Mode: Lisp -*-
+
+;;;; gillispie.system
+
+(mk:defsystem "GILLISPIE"
+  :documentation
+  "A (simple) Common Lisp implementation of Gillespie's algorithm."
+
+  :author "Marco Antoniotti"
+  :licence "BSD"
+
+  :components ((:file "gillispie-pkg")
+               (:file "sampling"
+                :depends-on ("gillispie-pkg"))
+               (:file "exponential"
+                :depends-on ("gillispie-pkg"))
+               (:file "gillispie"
+                :depends-on ("sampling"
+                             "exponential"))
+               )
+  )
+
+
+;;;; end of file -- gillispie.system
